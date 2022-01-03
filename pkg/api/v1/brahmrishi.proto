@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package v1;
+option go_package = "github.com/shashi-rai/brahmrishi/pkg/api/v1";
+import "google/protobuf/timestamp.proto";
+
+service BrahmrishiService {
+    rpc GetStatus(BrahmrishiRequest) returns (BrahmrishiReply) {}
+}
+
+message BrahmrishiRequest {
+    string name = 1;
+}
+  
+message BrahmrishiReply {
+    string message = 1;
+}
